@@ -1,0 +1,56 @@
+-----------------------Tinker patch begin-----------------------
+configuration: 
+oldApk:/Users/maning/Downloads/GitHub_Android/TinkerDemo/tool_output/old.apk
+newApk:/Users/maning/Downloads/GitHub_Android/TinkerDemo/tool_output/new.apk
+outputFolder:/Users/maning/Downloads/GitHub_Android/TinkerDemo/tool_output/output
+isIgnoreWarning:false
+isProtectedApp:false
+7-ZipPath:7za
+useSignAPk:true
+package meta fields: 
+filed name:patchMessage, filed value:classes.dex
+filed name:platform, filed value:all
+dex configs: 
+dexMode: jar
+dexPattern:assets/secondary-dex-.\.jar
+dexPattern:classes.*\.dex
+dex loader:com.maning.tinkerdemo.tinker.MyTinkerApplication
+dex loader:com.tencent.tinker.loader.*
+lib configs: 
+libPattern:lib/.*/.*\.so
+resource configs: 
+resPattern:resources\.arsc
+resPattern:AndroidManifest\.xml
+resPattern:res/.*
+resPattern:assets/.*
+resIgnore change:assets/sample_meta\.txt
+largeModSize:100kb
+useApplyResource:false
+
+Analyze old and new apk files:
+old apk: old.apk, size=1684164, md5=091691c846a3f09d526810136937b7f3
+new apk: new.apk, size=1698072, md5=4215fc378081db9456dc2064752b8174
+
+Manifest has no changes, skip rest decode works.
+UnZipping apk to /Users/maning/Downloads/GitHub_Android/TinkerDemo/tool_output/output/old
+UnZipping apk to /Users/maning/Downloads/GitHub_Android/TinkerDemo/tool_output/output/new
+Check for loader classes in dex: classes.dex
+
+Gen classes.dex patch file:/Users/maning/Downloads/GitHub_Android/TinkerDemo/tool_output/output/tinker_result/classes.dex, size:47373, md5:683c8a0f4c580dab47c969351229a3f6
+Verifying if patched new dex is logically the same as original new dex: new/classes.dex ...
+
+Gen classes.dex for dalvik full dex file:/Users/maning/Downloads/GitHub_Android/TinkerDemo/tool_output/output/tempPatchedDexes/classes.dex, size:2473972, md5:aa13006b567a59b9f016ed498add0a2a
+DexDecoder:write meta file data: classes.dex,,aa13006b567a59b9f016ed498add0a2a,aa13006b567a59b9f016ed498add0a2a,683c8a0f4c580dab47c969351229a3f6,2139606647,2970595509,jar
+
+Add test install result dex: /Users/maning/Downloads/GitHub_Android/TinkerDemo/tool_output/output/tinker_result/test.dex, size:584
+DexDecoder:write test dex meta file data: test.dex,,56900442eb5b7e1de45449d0685e6e00,56900442eb5b7e1de45449d0685e6e00,0,0,0,jar
+Generate unsigned apk: patch_unsigned.apk
+Signing apk: patch_signed.apk
+Signing key algorithm is SHA1withRSA
+Try use 7za to compress the patch file: patch_signed_7zip.apk, will cost much more time
+Current 7za path:7za
+7a patch file failed, you should set the zipArtifact, or set the path directly
+Result: final signed patch result: /Users/maning/Downloads/GitHub_Android/TinkerDemo/tool_output/output/patch_signed.apk, size=23202
+Tinker patch done, total time cost: 5.009000s
+Tinker patch done, you can go to file to find the output /Users/maning/Downloads/GitHub_Android/TinkerDemo/tool_output/output
+-----------------------Tinker patch end-------------------------

@@ -1,0 +1,6 @@
+#base package config field
+#Tue Aug 07 11:03:57 CST 2018
+platform=all
+NEW_TINKER_ID=tinker_id_1
+TINKER_ID=tinker_id_1
+patchMessage=classes.dex

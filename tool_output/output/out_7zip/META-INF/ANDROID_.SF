@@ -1,0 +1,17 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest-Main-Attributes: qDEhGZgadDTUbaPK7l4m+iiq2lY=
+SHA1-Digest-Manifest: UBsgewGP4haRh2iQ+HsHFbBIn1c=
+Created-By: 1.8.0_112 (Oracle Corporation)
+
+Name: assets/package_meta.txt
+SHA1-Digest: kkV5rbzkScz55xgNaqFsTXI4lX8=
+
+Name: classes.dex
+SHA1-Digest: ZXKMa7xuKV9jw/phZycZop1RHyo=
+
+Name: assets/dex_meta.txt
+SHA1-Digest: zw1kustHeYTEsquajAm5K6YpCQQ=
+
+Name: test.dex
+SHA1-Digest: 9jlJZZ+dKgQJh75auwJdN+fX1hg=
+

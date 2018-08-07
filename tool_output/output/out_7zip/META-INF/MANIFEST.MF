@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Created-By: 1.8.0_112 (Oracle Corporation)
+
+Name: assets/package_meta.txt
+SHA1-Digest: puChJHIraI9gkYNuQngFZLyKgBY=
+
+Name: classes.dex
+SHA1-Digest: FB1zA5B+Eh9MLtSCXF+FDVC3rD8=
+
+Name: assets/dex_meta.txt
+SHA1-Digest: cZQvWNlXpyAxZW/l2shcrE4SDnU=
+
+Name: test.dex
+SHA1-Digest: JQ6I/qo62WRfO8A5LZy1vaQmpYE=
+

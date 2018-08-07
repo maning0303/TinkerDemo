@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.maning.tinkerdemo"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        //tinker分包规则
+        multiDexKeepProguard file("./tinker_multidexkeep.pro") //keep specific classes using proguard syntax
+    }
+    signingConfigs {
+        release {
+            keyAlias 'android.keystore'
+            keyPassword '828740'
+            storeFile file('android.keystore')
+            storePassword '828740'
+            v2SigningEnabled false //暂时不支持v2签名
+            v1SigningEnabled true
+        }
+        debug {
+            //no keystore
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    //可选，用于生成application类
+    provided('com.tencent.tinker:tinker-android-anno:1.9.1')
+    //tinker的核心库
+    compile('com.tencent.tinker:tinker-android-lib:1.9.1')
+    //分包
+    compile("com.android.support:multidex:1.0.1")
+
+}

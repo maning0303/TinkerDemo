@@ -1,1 +1,1 @@
-java -jar tinker-patch-cli-1.9.8.jar
+java -jar tinker-patch-cli-1.9.8.jar -old old.apk -new new.apk -config tinker_config.xml -out output

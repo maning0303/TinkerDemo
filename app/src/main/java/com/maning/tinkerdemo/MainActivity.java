@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         if (file.exists()) {
             file.mkdirs();
         }
-        TinkerManager.loadPatch(patchDir.concat("patch.apk"));
+        TinkerManager.loadPatch(patchDir.concat("patch.apk"), "xxxxxx");
     }
 
     public void btnKillSelf(View view) {

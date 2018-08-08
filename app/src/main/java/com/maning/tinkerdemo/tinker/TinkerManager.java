@@ -25,6 +25,7 @@ public class TinkerManager {
     private static boolean isInstalled = false;
 
     private static ApplicationLike mAppLike;
+    private static TinkerPatchListener mPatchListener;
 
 
     public static void installTinker(ApplicationLike applicationLike) {
@@ -34,21 +35,22 @@ public class TinkerManager {
         }
         LoadReporter loadReporter = new DefaultLoadReporter(mAppLike.getApplication());
         PatchReporter patchReporter = new DefaultPatchReporter(mAppLike.getApplication());
-        PatchListener patchListener = new TinkerPatchListener(mAppLike.getApplication());
+        mPatchListener = new TinkerPatchListener(mAppLike.getApplication());
         AbstractPatch upgradePatchProcessor = new UpgradePatch();
         TinkerInstaller.install(
                 mAppLike,
                 loadReporter,
                 patchReporter,
-                patchListener,
+                mPatchListener,
                 TinkerResultService.class,
                 upgradePatchProcessor);
 
         isInstalled = true;
     }
 
-    public static void loadPatch(String path) {
+    public static void loadPatch(String path, String md5Value) {
         if (Tinker.isTinkerInstalled()) {
+            mPatchListener.setCurrentMD5(md5Value);
             TinkerInstaller.onReceiveUpgradePatch(getApplicationContext(), path);
         }
     }

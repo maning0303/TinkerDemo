@@ -34,11 +34,15 @@ public class TinkerManager {
         }
         LoadReporter loadReporter = new DefaultLoadReporter(mAppLike.getApplication());
         PatchReporter patchReporter = new DefaultPatchReporter(mAppLike.getApplication());
-        PatchListener patchListener = new DefaultPatchListener(mAppLike.getApplication());
+        PatchListener patchListener = new TinkerPatchListener(mAppLike.getApplication());
         AbstractPatch upgradePatchProcessor = new UpgradePatch();
-        TinkerInstaller.install(mAppLike,
-                loadReporter, patchReporter, patchListener,
-                TinkerResultService.class, upgradePatchProcessor);
+        TinkerInstaller.install(
+                mAppLike,
+                loadReporter,
+                patchReporter,
+                patchListener,
+                TinkerResultService.class,
+                upgradePatchProcessor);
 
         isInstalled = true;
     }
